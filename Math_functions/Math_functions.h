@@ -5,7 +5,7 @@ class Math_functions{
   public:
     float saturate(float x, float x_min, float x_max);
     float mod(float x);
-    float sig(float x);
+    float sign(float x);
     float rad_2_deg(float x);
     float deg_2_rad(float x);
     float rps_2_rpm(float rps);
