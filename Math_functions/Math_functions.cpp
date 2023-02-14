@@ -21,11 +21,11 @@ float Math_functions::mod(float x){
   }
 }
 
-float Math_functions::rad_to_deg(float x){
+float Math_functions::rad_2_deg(float x){
   return x*57.295779513082320876798154814105; //x*180/PI
 }
 
-float Math_functions::deg_to_rad(float x){
+float Math_functions::deg_2_rad(float x){
   return x*0.01745329251994329576923690768489; //x*PI/180
 }
 
@@ -34,8 +34,8 @@ float Math_functions::rps_2_rpm(float rps){
 }
 
 float Math_functions::rpm_2_rps(float rpm){
-    // return rpm*0.10471975512; // for faster execution
-    return rpm/9.54929658551;
+  // return rpm/9.54929658551;
+    return rpm*0.10471975512; // for faster execution
 }
 
 float Math_functions::wrap(float x, float a, float b){

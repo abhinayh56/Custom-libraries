@@ -5,8 +5,8 @@ class Math_functions{
   public:
     float saturate(float x, float x_min, float x_max);
     float mod(float x);
-    float rad_to_deg(float x);
-    float deg_to_rad(float x);
+    float rad_2_deg(float x);
+    float deg_2_rad(float x);
     float rps_2_rpm(float rps);
     float rpm_2_rps(float rpm);
     float wrap(float x, float a, float b);
