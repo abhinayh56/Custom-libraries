@@ -6,7 +6,7 @@ class Math_functions{
     float saturate(float x, float x_min, float x_max);
     float mod(float x);
     float sign(float x);
-    int greatest_int(float x);
+    int great_int(float x);
     float ceil(float x);
     float floor(float x);
     float rad_2_deg(float x);

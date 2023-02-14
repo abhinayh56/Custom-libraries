@@ -33,7 +33,7 @@ float Math_functions::sign(float x){
   }
 }
 
-int Math_functions::greatest_int(float x){
+int Math_functions::great_int(float x){
   if(x>=0){
     return (int)x;
   }
