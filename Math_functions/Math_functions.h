@@ -7,6 +7,8 @@ class Math_functions{
     float mod(float x);
     float rad_to_deg(float x);
     float deg_to_rad(float x);
+    float rps_2_rpm(float rps);
+    float rpm_2_rps(float rpm);
     float wrap(float x, float a, float b);
     float apply_deadband(float x, float deadband);
     float apply_deadband2(float x, float deadband);
@@ -18,8 +20,6 @@ class Math_functions{
     float poly_map_deg5(float x, float a0, float a1, float a2, float a3, float a4, float a5);
     float poly_map_deg6(float x, float a0, float a1, float a2, float a3, float a4, float a5, float a6);
     float poly_map_degn(float x, float a[], int n);
-    float rps_2_rpm(float rps);
-    float rpm_2_rps(float rpm);
 };
 
 #endif

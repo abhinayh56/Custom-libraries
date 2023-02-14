@@ -29,6 +29,15 @@ float Math_functions::deg_to_rad(float x){
   return x*0.01745329251994329576923690768489; //x*PI/180
 }
 
+float Math_functions::rps_2_rpm(float rps){
+    return rps*9.54929658551;
+}
+
+float Math_functions::rpm_2_rps(float rpm){
+    // return rpm*0.10471975512; // for faster execution
+    return rpm/9.54929658551;
+}
+
 float Math_functions::wrap(float x, float a, float b){
   if(x<=a){
     return x - a + b;
@@ -99,13 +108,4 @@ float Math_functions::poly_map_degn(float x, float a[], int n){
   else{
     return a[0];
   }
-}
-
-float Math_functions::rps_2_rpm(float rps){
-    return rps*9.54929658551;
-}
-
-float Math_functions::rpm_2_rps(float rpm){
-    // return rpm*0.10471975512; // for faster execution
-    return rpm/9.54929658551;
 }
