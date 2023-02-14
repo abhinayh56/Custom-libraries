@@ -21,6 +21,18 @@ float Math_functions::mod(float x){
   }
 }
 
+float Math_functions::sig(float x){
+  if(x<0){
+    return -1.0;
+  }
+  else if(x==0){
+    return 0.0;
+  }
+  else{
+    return 1.0;
+  }
+}
+
 float Math_functions::rad_2_deg(float x){
   return x*57.295779513082320876798154814105; //x*180/PI
 }
