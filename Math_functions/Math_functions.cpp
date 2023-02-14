@@ -21,7 +21,7 @@ float Math_functions::mod(float x){
   }
 }
 
-float Math_functions::sig(float x){
+float Math_functions::sign(float x){
   if(x<0){
     return -1.0;
   }
@@ -30,6 +30,33 @@ float Math_functions::sig(float x){
   }
   else{
     return 1.0;
+  }
+}
+
+int Math_functions::greatest_int(float x){
+  if(x>=0){
+    return (int)x;
+  }
+  else{
+    return (int)x - 1;
+  }
+}
+
+float Math_functions::ceil(float x){
+  if(x>=0){
+    return float((int)x + 1);
+  }
+  else{
+    return float((int)x);
+  }
+}
+
+float Math_functions::floor(float x){
+  if(x>=0){
+    return float((int)x);
+  }
+  else{
+    return float((int)x - 1);
   }
 }
 
