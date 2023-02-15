@@ -24,6 +24,7 @@ class Math_functions{
     float poly_map_deg5(float x, float a0, float a1, float a2, float a3, float a4, float a5);
     float poly_map_deg6(float x, float a0, float a1, float a2, float a3, float a4, float a5, float a6);
     float poly_map_degn(float x, float a[], int n);
+    float fast_inv_sqrt(float number);
 };
 
 #endif
