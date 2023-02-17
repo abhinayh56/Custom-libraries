@@ -27,8 +27,6 @@ class Math_functions{
     float fast_inv_sqrt(float number);
     bool points_AB_line_same_side(float x, float y, float x0, float y0, float x1, float y1, float x2, float y2);
     bool points_A0_line_same_side(float x, float y, float x1, float y1, float x2, float y2);
-    float point_inside_circle(float x0, float y0, float cx, float cy, float r);
-    float point_inside_triangle(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3);
 };
 
 #endif
