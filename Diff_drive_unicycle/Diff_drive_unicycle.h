@@ -7,6 +7,7 @@ class Diff_drive_unicycle{
         Diff_drive_unicycle();
         void set_param(float r_, float L_);
         void set_v_max(float V_max);
+        void set_w_max(float W_max);
         float get_v_max();
         float get_w_max();
         float get_wlr_max();

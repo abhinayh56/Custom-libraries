@@ -14,6 +14,12 @@ void Diff_drive_unicycle::set_v_max(float V_max_){
     W_max = 2.0*V_max/L;
 }
 
+void Diff_drive_unicycle::set_w_max(float W_max_){
+    W_max = W_max_;
+    V_max = W_max*L/2.0;
+    w_lr_max = V_max/r;
+}
+
 float Diff_drive_unicycle::get_v_max(){
     return V_max;
 }
@@ -45,7 +51,8 @@ float Diff_drive_unicycle::get_L(){
 void Diff_drive_unicycle::uni2ddr(float Vc_, float Wc_, float* wr, float* wl){
     float Vc = Vc_;
     float Wc = Wc_;
-    // update_domain_vw(Vc_, Wc_, &Vc, &Wc);
+    update_domain_vw(Vc_, Wc_, &Vc, &Wc);
+    
     *wr = (Vc + Wc*L*0.5) / r;
     *wl = (Vc - Wc*L*0.5) / r;
 }
