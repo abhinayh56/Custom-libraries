@@ -75,34 +75,71 @@ void Diff_drive_unicycle::update_domain_vw(float V_in, float W_in, float* V_out,
     float V_n = V_in;
     float W_n = W_in;
 
-    int region = 1;
-    if(W_in>W_max){
-        region = 2;
+    int region = 0;
+
+    if(W_in>=W_max){
+        region = 5;
     }
-    else if(W_in<-W_max){
-        region = 3;
+    else if(W_in <=(-W_max)){
+        region = 6;
+    }
+    else if(W_in>=0){
+        if(V_in>=0){
+            if(math_fun.points_A0_line_same_side(V_in, W_in, V_max, 0.0, 0.0, W_max)==false){
+                region = 1;
+            }
+        }
+        else{
+            if(math_fun.points_A0_line_same_side(V_in, W_in, -V_max, 0.0, 0.0, W_max)==false){
+                region = 2;
+            }
+        }
+    }
+    else{
+        if(V_in>=0){
+            if(math_fun.points_A0_line_same_side(V_in, W_in, V_max, 0.0, 0.0, -W_max)==false){
+                region = 4;
+            }
+        }
+        else{
+            if(math_fun.points_A0_line_same_side(V_in, W_in, -V_max, 0.0, 0.0, -W_max)==false){
+                region = 3;
+            }
+        }
     }
 
     switch(region){
-        case 1:
+        case 0:
             V_n = V_in;
             W_n = W_in;
             break;
+        case 1:
+            V_n = math_fun.linear_map(W_in, 0.0, W_max, V_max, 0.0);
+            W_n = W_in;
+            break;
         case 2:
+            V_n = math_fun.linear_map(W_in, 0.0, W_max, -V_max, 0.0);
+            W_n = W_in;
             break;
         case 3:
+            V_n = math_fun.linear_map(W_in, 0.0, -W_max, -V_max, 0.0);
+            W_n = W_in;
             break;
         case 4:
+            V_n = math_fun.linear_map(W_in, 0.0, -W_max, V_max, 0.0);
+            W_n = W_in;
             break;
         case 5:
+            V_n = 0.0;
+            W_n = W_in;
             break;
         case 6:
-            break;
-        case 7:
+            V_n = 0.0;
+            W_n = W_in;
             break;
         default:
-            *V_out = V_in;
-            *W_out = W_in;
+            V_n = V_in;
+            W_n = W_in;
             break;
     }
 

@@ -164,3 +164,25 @@ float Math_functions::fast_inv_sqrt(float number){
 	// y  = y*(threehalfs - (x2*y*y));   // 2nd iteration, this can be removed
 	return y;
 }
+
+bool Math_functions::points_AB_line_same_side(float x, float y, float x0, float y0, float x1, float y1, float x2, float y2){
+  float L0 = (y2-y1)*(x0-x1) - (x2-x1)*(y0-y1);
+  float L  = (y2-y1)*(x -x1) - (x2-x1)*(y -y1);
+  if(L0*L>=0){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+bool Math_functions::points_A0_line_same_side(float x, float y, float x1, float y1, float x2, float y2){
+  float L0 = (y2-y1)*(-x1) - (x2-x1)*(-y1);
+  float L  = (y2-y1)*(x-x1) - (x2-x1)*(y-y1);
+  if(L0*L>=0){
+    return true;
+  }
+  else{
+    return false;
+  }
+}

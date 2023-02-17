@@ -1,6 +1,7 @@
 #ifndef DIFF_DRIVE_UNICYCLE
 #define DIFF_DRIVE_UNICYCLE
 
+#include "Math_functions.h"
 class Diff_drive_unicycle{
     public:
         Diff_drive_unicycle();
@@ -22,6 +23,7 @@ class Diff_drive_unicycle{
         void update_domain_vw(float Vc_in, float Wc_in, float* Vc_out, float* Wc_out);
 
     private:
+        Math_functions math_fun;
         float r = 1.0;
         float L = 1.0;
         float w_lr_max = 0.0;

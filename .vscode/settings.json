@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "cmath": "cpp",
+        "*.tcc": "cpp",
+        "complex": "cpp",
+        "random": "cpp"
+    }
+}
