@@ -1,7 +1,7 @@
 #ifndef DIFF_DRIVE_UNICYCLE
 #define DIFF_DRIVE_UNICYCLE
 
-#include "/home/abhinay/Robotics/Custom-libraries/Math_functions/Math_functions.h"
+#include "Math_functions.h"
 class Diff_drive_unicycle{
     public:
         Diff_drive_unicycle();
