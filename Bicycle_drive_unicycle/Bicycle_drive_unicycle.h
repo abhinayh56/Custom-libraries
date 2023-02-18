@@ -1,6 +1,8 @@
 #ifndef BICYCLE_DRIVE_UNICYCLE
 #define BICYCLE_DRIVE_UNICYCLE
 
+#include <math.h>
+
 class Bicycle_drive_unicycle{
     public:
         Bicycle_drive_unicycle();
