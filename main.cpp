@@ -1,5 +1,5 @@
 // #include <iostream>
-// #include "Diff_drive_unicycle.h"
+// #include "Diff_drive_unicycle/Diff_drive_unicycle.h"
 
 // using namespace std;
 
@@ -21,8 +21,6 @@
 //     Diff_drive_unicycle robot1;
 //     Diff_drive_unicycle robot2;
 
-//     Diff_drive_unicycle robot[10];
-
 //     robot1.set_param(0.1, 0.2);
 //     robot1.set_v_max(1.0);
 
@@ -35,6 +33,8 @@
 //     robot1.uni2ddr(Vc,Wc,&wr,&wl);
 
 //     // drive_motor(wr,wl);
+
+//     std::cout << "hhhhhhh\nhello" << endl;
 
 
 //     return 0;
