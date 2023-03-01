@@ -186,3 +186,24 @@ bool Math_functions::points_A0_line_same_side(float x, float y, float x1, float 
     return false;
   }
 }
+
+Circle::Circle(){
+}
+
+Circle::~Circle(){
+}
+
+bool Circle::inside(float xc, float yc, float r, float x0, float y0){
+  if(sqrt((x0-xc)*(x0-xc) + (y0-yc)*(y0-yc))<=r){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+void Circle::intersection_line(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){
+}
+
+void Circle::intersection_circle(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){
+}
