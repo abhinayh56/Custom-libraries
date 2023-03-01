@@ -60,23 +60,6 @@ float Math_functions::floor(float x){
   }
 }
 
-float Math_functions::rad_2_deg(float x){
-  return x*57.295779513082320876798154814105; //x*180/PI
-}
-
-float Math_functions::deg_2_rad(float x){
-  return x*0.01745329251994329576923690768489; //x*PI/180
-}
-
-float Math_functions::rps_2_rpm(float rps){
-    return rps*9.54929658551;
-}
-
-float Math_functions::rpm_2_rps(float rpm){
-  // return rpm/9.54929658551;
-    return rpm*0.10471975512; // for faster execution
-}
-
 float Math_functions::wrap(float x, float a, float b){
   if(x<=a){
     return x - a + b;
@@ -110,6 +93,23 @@ float Math_functions::apply_deadband2(float x, float deadband){
       return x + deadband*0.5;
     }
   }
+}
+
+float Math_functions::rad_2_deg(float x){
+  return x*57.295779513082320876798154814105; //x*180/PI
+}
+
+float Math_functions::deg_2_rad(float x){
+  return x*0.01745329251994329576923690768489; //x*PI/180
+}
+
+float Math_functions::rps_2_rpm(float rps){
+    return rps*9.54929658551;
+}
+
+float Math_functions::rpm_2_rps(float rpm){
+  // return rpm/9.54929658551;
+    return rpm*0.10471975512; // for faster execution
 }
 
 float Math_functions::linear_map(float x, float x1, float x2, float y1, float y2){
