@@ -2,6 +2,7 @@
 #define BASIC_FUNCTIONS
 
 #include "math.h"
+#include "Constants.h"
 
 class Math_functions{
   public:
@@ -40,7 +41,33 @@ class Circle{
     ~Circle();
     bool inside(float xc, float yc, float r, float x0, float y0);
     void intersection_line(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20);
-    void intersection_circle(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20);
+    void intersection_circle(float c1x, float c1y, float r1, float c2x, float c2y, float r2, float* x01, float* y01, float* x02, float* y02);
+};
+
+class Point_2D{
+  public:
+    float x = 0.0;
+    float y = 0.0;
+};
+
+class Point_3D{
+  public:
+    float x = 0.0;
+    float y = 0.0;
+    float z = 0.0;
+};
+
+class Vector_2D{
+  public:
+    float x = 0.0;
+    float y = 0.0;
+};
+
+class Vector_3D{
+  public:
+    float x = 0.0;
+    float y = 0.0;
+    float z = 0.0;
 };
 
 #endif

@@ -193,8 +193,8 @@ Circle::Circle(){
 Circle::~Circle(){
 }
 
-bool Circle::inside(float xc, float yc, float r, float x0, float y0){
-  if(sqrt((x0-xc)*(x0-xc) + (y0-yc)*(y0-yc))<=r){
+bool Circle::inside(float cx, float cy, float r, float x0, float y0){
+  if(sqrt((x0-cx)*(x0-cx) + (y0-cy)*(y0-cy))<=r){
     return true;
   }
   else{
@@ -202,20 +202,36 @@ bool Circle::inside(float xc, float yc, float r, float x0, float y0){
   }
 }
 
-void Circle::intersection_line(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){
+void Circle::intersection_line(float cx, float cy, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){
   float a = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
-  float b = 2.0*((x2-x1)*(x1-xc) + (y2-y1)*(y1-yc));
-  float c = (x1-xc)*(x1-xc) + (y1-yc)*(y1-yc);
+  float b = 2.0*((x2-x1)*(x1-cx) + (y2-y1)*(y1-cy));
+  float c = (x1-cx)*(x1-cx) + (y1-cy)*(y1-cy) - r*r;
 
   float D = b*b - 4.0*a*c;
 
-  if(D<0.0){
-    *x10 = 
-  }
-
+  if(D>0.0){
   float lambda_1 = (-b + sqrt(D)) / (2.0*a);
   float lambda_2 = (-b - sqrt(D)) / (2.0*a);
+    *x10 = x1 + lambda_1*(x2-x1);
+    *y10 = y1 + lambda_1*(y2-y1);
+    *x20 = x1 + lambda_2*(x2-x1);
+    *y20 = y1 + lambda_2*(y2-y1);
+  }
+  else if(D==0.0){
+    float lambda_1 = (-b) / (2.0*a);
+    float lambda_2 = (-b) / (2.0*a);
+    *x10 = x1 + lambda_1*(x2-x1);
+    *y10 = y1 + lambda_1*(y2-y1);
+    *x20 = x1 + lambda_2*(x2-x1);
+    *y20 = y1 + lambda_2*(y2-y1);
+  }
+  else{
+    *x10 = math_inf;
+    *y10 = math_inf;
+    *x20 = -math_inf;
+    *y20 = -math_inf;
+  }
 }
 
-void Circle::intersection_circle(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){
+void Circle::intersection_circle(float c1x, float c1y, float r1, float c2x, float c2y, float r2, float* x01, float* y01, float* x02, float* y02){
 }
