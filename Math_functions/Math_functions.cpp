@@ -207,7 +207,7 @@ void Circle::intersection_line(float xc, float yc, float r, float x1, float y1, 
   float b = 2.0*((x2-x1)*(x1-xc) + (y2-y1)*(y1-yc));
   float c = (x1-xc)*(x1-xc) + (y1-yc)*(y1-yc);
 
-  float D = b - 4.0*a*c;
+  float D = b*b - 4.0*a*c;
 
   if(D<0.0){
     *x10 = 
