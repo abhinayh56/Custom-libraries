@@ -203,6 +203,18 @@ bool Circle::inside(float xc, float yc, float r, float x0, float y0){
 }
 
 void Circle::intersection_line(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){
+  float a = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
+  float b = 2.0*((x2-x1)*(x1-xc) + (y2-y1)*(y1-yc));
+  float c = (x1-xc)*(x1-xc) + (y1-yc)*(y1-yc);
+
+  float D = bb - 4.0*a*c;
+
+  if(D<0.0){
+    *x10 = 
+  }
+
+  float lambda_1 = (-b + sqrt(D)) / (2.0*a);
+  float lambda_2 = (-b - sqrt(D)) / (2.0*a);
 }
 
 void Circle::intersection_circle(float xc, float yc, float r, float x1, float y1, float x2, float y2, float* x10, float* y10, float* x20, float* y20){

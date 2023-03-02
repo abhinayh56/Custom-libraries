@@ -6,6 +6,9 @@
 #define math_pi2 3.14159265358979323846*0.5
 #define math_e   2.71828182845904523536
 
+#define math_inf_plus  99999999999999999999999.9
+#define math_inf_minus -99999999999999999999999.9
+
 #define env_g  9.81
 
 #endif
